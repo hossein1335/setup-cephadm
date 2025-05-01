@@ -10,3 +10,6 @@ sudo apt install cephadm # install
 ################ use this command on one node for bootstrap ###############
 #first install docker and lvm2
 sudo cephadm bootstrap --mon-ip 172.16.69.30 --initial-dashboard-user admin --initial-dashboard-password 12345678
+sudo cephadm shell # for connect to ceph shell
+################ add host ###############
+
