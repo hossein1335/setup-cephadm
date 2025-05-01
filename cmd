@@ -12,4 +12,14 @@ sudo apt install cephadm # install
 sudo cephadm bootstrap --mon-ip 172.16.69.30 --initial-dashboard-user admin --initial-dashboard-password 12345678
 sudo cephadm shell # for connect to ceph shell
 ################ add host ###############
+cat /etc/ceph/ceph.pub # copy key
+# go to another host user root and pase on 
+sudo vim /root/.ssh/authorized_keys
+################ in first host #############
+systemctl statuse # check your service ceph statuse
+sudo cephadm shell # connect to ceph shell
+ceph orch host add ceph2 172.16.69.56 # add another node 
+ceph orch host label add ceph2 _admin
+ceph orch host ls #
+ceph -s 
 
